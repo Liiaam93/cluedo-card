@@ -1,25 +1,64 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box, Divider, Grid, Input, Text } from "@chakra-ui/react";
+import Clue from "./components/Clue";
+import Header from "./components/Header";
 
 function App() {
+  const suspects = ["Mustard", "Plum", "Green", "Scarlet", "Peacock", "Orchid"];
+  const weapons = [
+    "Candle Stick",
+    "Dagger",
+    "Revolver",
+    "Lead Pipe",
+    "Rope",
+    "Wrench",
+  ];
+  const rooms = [
+    "Conservatory",
+    "Ballroom",
+    "Kitchen",
+    "Dining Room",
+    "Lounge",
+    "Hall",
+    "Study",
+    "Library",
+    "Billiards Room",
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box height={"100%"} background={"darkslategray"} color="white">
+      <Header />
+      <Text
+        pt="20"
+        textAlign={"center"}
+        fontSize={"3xl"}
+        fontWeight="800"
+        textShadow={"2px 2px #000"}
+        color="red"
+      >
+        Cluedo!
+      </Text>
+      <Divider w="80%" m="auto" />
+      <Text pt="5" textAlign={"center"} fontSize="lg" color={"yellow"}>
+        Suspects
+      </Text>
+      {suspects.map((suspect) => (
+        <Clue name={suspect} />
+      ))}
+
+      <Divider w="80%" m="auto" pt="5" />
+      <Text textAlign={"center"} fontSize="lg" color={"yellow"}>
+        Weapons
+      </Text>
+      {weapons.map((weapon) => (
+        <Clue name={weapon} />
+      ))}
+      <Divider w="80%" pt="5" m="auto" />
+      <Text textAlign={"center"} fontSize="lg" color={"yellow"}>
+        Rooms
+      </Text>
+      {rooms.map((room) => (
+        <Clue name={room} />
+      ))}
+    </Box>
   );
 }
 
