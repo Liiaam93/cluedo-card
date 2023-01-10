@@ -10,8 +10,33 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <ChakraProvider theme={customTheme}>
+  <ChakraProvider resetCSS theme={customTheme}>
     <React.StrictMode>
+      <head>
+        <title>Cluedo Interactive Game Card</title>
+        <meta name="Cluedo Game Card" content="Made by Liam Burbidge" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-ico.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favico-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favico-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff"></meta>
+      </head>
       <App />
     </React.StrictMode>
   </ChakraProvider>
