@@ -1,10 +1,22 @@
-import { Checkbox, Grid, Text } from "@chakra-ui/react";
-import React from "react";
+import { Box, Checkbox, Grid, Text } from "@chakra-ui/react";
+import React, { useState } from "react";
+import CheckBox from "./CheckBox";
 
 type Props = {
   name: string;
 };
 const Clue: React.FC<Props> = (props) => {
+  const [icon, setIcon] = useState("");
+
+  const setChecked = () => {
+    if (icon === "") {
+      setIcon("X");
+    } else if (icon === "X") {
+      setIcon("?");
+    } else if (icon === "?") {
+      setIcon("");
+    }
+  };
   return (
     <Grid
       templateColumns="repeat(6, 1fr)"
@@ -16,11 +28,12 @@ const Clue: React.FC<Props> = (props) => {
       <Text p="2" w="20vw">
         {props.name}
       </Text>
-      <Checkbox alignSelf={"center"} size={["sm", "lg"]} m="auto" />
-      <Checkbox alignSelf={"center"} size={["sm", "lg"]} m="auto" />
-      <Checkbox alignSelf={"center"} size={["sm", "lg"]} m="auto" />
-      <Checkbox alignSelf={"center"} size={["sm", "lg"]} m="auto" />
-      <Checkbox alignSelf={"center"} size={["sm", "lg"]} m="auto" />
+
+      <CheckBox />
+      <CheckBox />
+      <CheckBox />
+      <CheckBox />
+      <CheckBox />
     </Grid>
   );
 };
