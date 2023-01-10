@@ -11,16 +11,16 @@ const Clue: React.FC<Props> = (props) => {
       gap={4}
       w="90vw"
       m="auto"
-      fontSize={["xs", "xs", "md"]}
+      fontSize={["xs", "md"]}
     >
-      <Text p="2" w="15vw">
+      <Text p="2" w="20vw">
         {props.name}
       </Text>
-      <Checkbox alignSelf={"center"} size={"lg"} m="auto" />
-      <Checkbox alignSelf={"center"} size={"lg"} m="auto" />
-      <Checkbox alignSelf={"center"} size={"lg"} m="auto" />
-      <Checkbox alignSelf={"center"} size={"lg"} m="auto" />
-      <Checkbox alignSelf={"center"} size={"lg"} m="auto" />
+      <Checkbox alignSelf={"center"} size={["sm", "lg"]} m="auto" />
+      <Checkbox alignSelf={"center"} size={["sm", "lg"]} m="auto" />
+      <Checkbox alignSelf={"center"} size={["sm", "lg"]} m="auto" />
+      <Checkbox alignSelf={"center"} size={["sm", "lg"]} m="auto" />
+      <Checkbox alignSelf={"center"} size={["sm", "lg"]} m="auto" />
     </Grid>
   );
 };
