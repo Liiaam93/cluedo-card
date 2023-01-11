@@ -13,7 +13,7 @@ root.render(
   <ChakraProvider resetCSS theme={customTheme}>
     <React.StrictMode>
       <head>
-        <title>Cluedo Interactive Game Card</title>
+        <title>An Interactive Cluedo Game Card</title>
         <meta name="Cluedo Game Card" content="Made by Liam Burbidge" />
         <link
           rel="apple-touch-icon"

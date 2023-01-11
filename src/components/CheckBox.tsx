@@ -3,14 +3,18 @@ import React, { useState } from "react";
 
 const CheckBox = () => {
   const [icon, setIcon] = useState("");
+  const [iconColor, setIconColor] = useState("");
 
   const setChecked = () => {
     if (icon === "") {
       setIcon("X");
+      setIconColor("red");
     } else if (icon === "X") {
       setIcon("?");
+      setIconColor("blue");
     } else if (icon === "?") {
       setIcon("");
+      setIconColor("");
     }
   };
 
@@ -23,7 +27,7 @@ const CheckBox = () => {
       height={[5, 6]}
       w={[5, 6]}
       onClick={setChecked}
-      background={icon !== "" ? "red" : ""}
+      background={iconColor}
     >
       <Text fontSize={["12", "md"]} textAlign={"center"}>
         {icon}

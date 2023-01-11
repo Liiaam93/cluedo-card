@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Input, Text } from "@chakra-ui/react";
+import { Box, Divider, Grid, Heading, Input, Text } from "@chakra-ui/react";
 import Clue from "./components/Clue";
 import Header from "./components/Header";
 
@@ -26,7 +26,7 @@ function App() {
   return (
     <Box height={"100%"} background={"darkslategray"} color="white">
       <Header />
-      <Text
+      <Heading
         pt="20"
         textAlign={"center"}
         fontSize={"3xl"}
@@ -35,7 +35,7 @@ function App() {
         color="red"
       >
         Cluedo!
-      </Text>
+      </Heading>
       <Divider w="80%" m="auto" />
       <Text pt="5" textAlign={"center"} fontSize="lg" color={"yellow"}>
         Suspects
