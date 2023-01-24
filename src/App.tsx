@@ -111,7 +111,9 @@ function App() {
       ))}
       <Flex
         justifyContent={"center"}
-        mt="5"
+        mt="10"
+        pt="5"
+        pb="10"
         marginX={["2vw", "10vw"]}
         borderWidth={1}
       >
@@ -120,7 +122,11 @@ function App() {
             Remaining Suspects
           </Heading>
           {suspects.map((s) => (
-            <Text textAlign={"center"} fontSize={["xs", "md"]}>
+            <Text
+              textAlign={"center"}
+              fontSize={["xs", "md"]}
+              color={suspects.length === 1 ? "red" : "white"}
+            >
               • {s}
             </Text>
           ))}
@@ -130,7 +136,11 @@ function App() {
             Remaining Weapons
           </Heading>
           {weapons.map((w) => (
-            <Text textAlign={"center"} fontSize={["xs", "md"]}>
+            <Text
+              textAlign={"center"}
+              fontSize={["xs", "md"]}
+              color={weapons.length === 1 ? "red" : "white"}
+            >
               • {w}
             </Text>
           ))}
@@ -140,7 +150,11 @@ function App() {
             Remaining Rooms
           </Heading>
           {rooms.map((r) => (
-            <Text textAlign={"center"} fontSize={["xs", "md"]}>
+            <Text
+              textAlign={"center"}
+              fontSize={["xs", "md"]}
+              color={rooms.length === 1 ? "red" : "white"}
+            >
               • {r}
             </Text>
           ))}
