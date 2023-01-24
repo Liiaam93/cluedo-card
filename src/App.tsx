@@ -127,7 +127,7 @@ function App() {
         </VStack>
         <VStack w={"33%"}>
           <Heading textAlign={"center"} size={["xs", "md"]} color="yellow">
-            Remaining weapons
+            Remaining Weapons
           </Heading>
           {weapons.map((w) => (
             <Text textAlign={"center"} fontSize={["xs", "md"]}>
