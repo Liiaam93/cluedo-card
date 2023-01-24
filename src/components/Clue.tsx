@@ -4,19 +4,16 @@ import CheckBox from "./CheckBox";
 
 type Props = {
   name: string;
+  weapons?: string[];
+  setWeapons?: React.Dispatch<React.SetStateAction<string[]>>;
+  rooms?: string[];
+  setRooms?: React.Dispatch<React.SetStateAction<string[]>>;
+  suspects?: string[];
+  setSuspects?: React.Dispatch<React.SetStateAction<string[]>>;
 };
 const Clue: React.FC<Props> = (props) => {
   const [icon, setIcon] = useState("");
 
-  const setChecked = () => {
-    if (icon === "") {
-      setIcon("X");
-    } else if (icon === "X") {
-      setIcon("?");
-    } else if (icon === "?") {
-      setIcon("");
-    }
-  };
   return (
     <Grid
       templateColumns="repeat(6, 1fr)"
@@ -29,11 +26,51 @@ const Clue: React.FC<Props> = (props) => {
         {props.name}
       </Text>
 
-      <CheckBox />
-      <CheckBox />
-      <CheckBox />
-      <CheckBox />
-      <CheckBox />
+      <CheckBox
+        name={props.name}
+        weapons={props.weapons}
+        setWeapons={props.setWeapons}
+        rooms={props.rooms}
+        setRooms={props.setRooms}
+        suspects={props.suspects}
+        setSuspects={props.setSuspects}
+      />
+      <CheckBox
+        name={props.name}
+        weapons={props.weapons}
+        setWeapons={props.setWeapons}
+        rooms={props.rooms}
+        setRooms={props.setRooms}
+        suspects={props.suspects}
+        setSuspects={props.setSuspects}
+      />
+      <CheckBox
+        name={props.name}
+        weapons={props.weapons}
+        setWeapons={props.setWeapons}
+        rooms={props.rooms}
+        setRooms={props.setRooms}
+        suspects={props.suspects}
+        setSuspects={props.setSuspects}
+      />
+      <CheckBox
+        name={props.name}
+        weapons={props.weapons}
+        setWeapons={props.setWeapons}
+        rooms={props.rooms}
+        setRooms={props.setRooms}
+        suspects={props.suspects}
+        setSuspects={props.setSuspects}
+      />
+      <CheckBox
+        name={props.name}
+        weapons={props.weapons}
+        setWeapons={props.setWeapons}
+        rooms={props.rooms}
+        setRooms={props.setRooms}
+        suspects={props.suspects}
+        setSuspects={props.setSuspects}
+      />
     </Grid>
   );
 };

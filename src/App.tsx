@@ -1,18 +1,67 @@
-import { Box, Divider, Grid, Heading, Input, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Flex,
+  Grid,
+  Heading,
+  HStack,
+  Input,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import { useState } from "react";
 import Clue from "./components/Clue";
 import Header from "./components/Header";
 
+const weaponList = [
+  "Candle Stick",
+  "Dagger",
+  "Revolver",
+  "Lead Pipe",
+  "Rope",
+  "Wrench",
+];
+
+const suspectList = [
+  "Mustard",
+  "Plum",
+  "Green",
+  "Scarlet",
+  "Peacock",
+  "Orchid",
+];
+const roomList = [
+  "Conservatory",
+  "Ballroom",
+  "Kitchen",
+  "Dining Room",
+  "Lounge",
+  "Hall",
+  "Study",
+  "Library",
+  "Billiards Room",
+];
+
 function App() {
-  const suspects = ["Mustard", "Plum", "Green", "Scarlet", "Peacock", "Orchid"];
-  const weapons = [
+  const [weapons, setWeapons] = useState([
     "Candle Stick",
     "Dagger",
     "Revolver",
     "Lead Pipe",
     "Rope",
     "Wrench",
-  ];
-  const rooms = [
+  ]);
+
+  const [suspects, setSuspects] = useState([
+    "Mustard",
+    "Plum",
+    "Green",
+    "Scarlet",
+    "Peacock",
+    "Orchid",
+  ]);
+
+  const [rooms, setRooms] = useState([
     "Conservatory",
     "Ballroom",
     "Kitchen",
@@ -22,7 +71,8 @@ function App() {
     "Study",
     "Library",
     "Billiards Room",
-  ];
+  ]);
+
   return (
     <Box height={"100%"} background={"darkslategray"} color="white">
       <Header />
@@ -40,24 +90,62 @@ function App() {
       <Text pt="5" textAlign={"center"} fontSize="lg" color={"yellow"}>
         Suspects
       </Text>
-      {suspects.map((suspect) => (
-        <Clue name={suspect} />
+      {suspectList.map((s) => (
+        <Clue name={s} suspects={suspects} setSuspects={setSuspects} />
       ))}
 
       <Divider w="80%" m="auto" pt="5" />
       <Text textAlign={"center"} fontSize="lg" color={"yellow"}>
         Weapons
       </Text>
-      {weapons.map((weapon) => (
-        <Clue name={weapon} />
+
+      {weaponList.map((w) => (
+        <Clue name={w} weapons={weapons} setWeapons={setWeapons} />
       ))}
       <Divider w="80%" pt="5" m="auto" />
       <Text textAlign={"center"} fontSize="lg" color={"yellow"}>
         Rooms
       </Text>
-      {rooms.map((room) => (
-        <Clue name={room} />
+      {roomList.map((r) => (
+        <Clue name={r} rooms={rooms} setRooms={setRooms} />
       ))}
+      <Flex
+        justifyContent={"center"}
+        mt="5"
+        marginX={["2vw", "10vw"]}
+        borderWidth={1}
+      >
+        <VStack w={"33%"}>
+          <Heading textAlign={"center"} size={["xs", "md"]} color="yellow">
+            Remaining Suspects
+          </Heading>
+          {suspects.map((s) => (
+            <Text textAlign={"center"} fontSize={["xs", "md"]}>
+              • {s}
+            </Text>
+          ))}
+        </VStack>
+        <VStack w={"33%"}>
+          <Heading textAlign={"center"} size={["xs", "md"]} color="yellow">
+            Remaining weapons
+          </Heading>
+          {weapons.map((w) => (
+            <Text textAlign={"center"} fontSize={["xs", "md"]}>
+              • {w}
+            </Text>
+          ))}
+        </VStack>
+        <VStack w={"33%"}>
+          <Heading textAlign={"center"} size={["xs", "md"]} color="yellow">
+            Remaining Rooms
+          </Heading>
+          {rooms.map((r) => (
+            <Text textAlign={"center"} fontSize={["xs", "md"]}>
+              • {r}
+            </Text>
+          ))}
+        </VStack>
+      </Flex>
     </Box>
   );
 }
